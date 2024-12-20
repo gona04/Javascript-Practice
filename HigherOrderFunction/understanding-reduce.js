@@ -147,3 +147,57 @@ const output2R = input2.reduce((arr, curr) => {
 }, {});
 
 console.log(output2R);
+/* ***************************************************************************************************** 
+                                    Q6. Calculate Frequency of Characters
+                                    Count the frequency of each character in a string.
+***************************************************************************************************** */
+const input3 = "hello" 
+// Output: { h: 1, e: 1, l: 2, o: 1 }
+
+let countLetters = 1;
+let obj = {};
+
+//Custom way
+Array.from(input3).forEach(a => {
+    if(!obj[a]) {
+        obj[a] = 1;
+        countLetters = 1
+    }
+    else countLetters++
+
+    obj[a] = countLetters
+});
+
+console.log('Custom: Count Letters', obj);
+
+//Using Reduce 
+
+const output3 = Array.from(input3).reduce((arr,curr) => {
+    if(!arr[curr]) {
+        arr[curr] = 1
+        countLetters = 1
+    } else {
+        countLetters++
+    }
+    arr[curr] = countLetters;
+    return arr;
+}, {});
+
+console.log('Custom: Count Letters', output3);
+
+/* ***************************************************************************************************** 
+                                    Q7. Custom Map Implementation
+                        Recreate the functionality of the map method using reduce.
+                                    with transformation x => x * 2 
+***************************************************************************************************** */
+const input4 = [1, 2, 3] 
+
+// Output: [2, 4, 6]
+
+// Using reduce
+const output4 = input4.reduce((acc, curr) => {
+   acc.push(curr * 2);
+   return acc;
+}, [])
+
+console.log(output4);
