@@ -3,17 +3,17 @@ Because of the clousure
 functionality the below 
 fun prints the value of callMe
 */
-// function callMeMaybe() {
-//     const callMe = "Hi! I am now here!"
-//     setTimeout(function() {
-//         console.log(callMe);
-//     },4000)
-// }
+function callMeMaybe() {
+    const callMe = "Hi! I am now here!"
+    setTimeout(function() {
+        console.log(callMe);
+    },4000)
+}
 
-// callMeMaybe()
+callMeMaybe()
 
 //Exe 2
-/* let view;
+let view;
 let count = 0;
 function initialize() {
   let call = 0;
@@ -31,7 +31,7 @@ function initialize() {
 
 const sOnce = initialize()
 sOnce();
-sOnce(); */
+sOnce(); 
 
 // A counter closure function that returns a counter
 function createCounter() {
