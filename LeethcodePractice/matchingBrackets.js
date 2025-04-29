@@ -21,8 +21,6 @@ var isValid = function (s) {
 
     if(stack.length === 0) return true;
     else return false;
-
-
 };
 console.log(counting);
 console.log(isValid("()[]{}")); // 1 true - correct
