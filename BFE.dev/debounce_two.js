@@ -1,6 +1,6 @@
 const searchFor = document.getElementById('search-data');
 
-var timeout;
+let timeout;
 
 function debounce(value) {
     //First it will clear the timeout as soon as something is written in the input
