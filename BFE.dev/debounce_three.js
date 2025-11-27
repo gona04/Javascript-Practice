@@ -1,13 +1,20 @@
-let searchData = document.getElementById('seach_data')
-let wait;
+let searchData = document.getElementById("seach_data");
 
-searchData.addEventListener('input', (event) => {
-    doIDoSomething(event.target.value)
-})
+searchData.addEventListener("input", (event) => {
+  doIDoSomething(event.target.value);
+});
 
-function doIDoSomething(data) {
+const doIDoSomething = debounce((data) => {
+    console.log(`Sending ${data} to backend`);
+  }, 1000);
+
+
+function debounce(fn, delay) {
+  let wait;
+  return function (...args) {
     clearTimeout(wait);
-    wait = setTimeout(() =>{
-        console.log(`Sending ${data} to backend`);
-    }, 1000)
+    wait = setTimeout(() => {
+      fn.apply(this,args);
+    }, delay);
+  };
 }
